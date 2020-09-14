@@ -246,18 +246,20 @@ and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(arr4){
   
-  const art20s = arr4.split('-');
+  let newArr = [];
+  //const art20s = arr4.split('-');
    
    for (i = 0; i <= arr4.length-1; i++){
-     if(arr4[i].years >= '1900' && arr4[i].years <= '2000'){
-     console.log(art20s)
-       return art20s;
+     if(arr4[i].years.split(' - ') >= '1900' && arr4[i].years.split(' - ') <= '2000'){
+      newArr.push(arr4[i].name);
+      //return arr4.push({years});
      }
     }  
    }
-   get20s(artists.years);
-   
-   console.log(artists);
+   return newArr;
+   //return art20s;
+
+   console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -282,8 +284,6 @@ function removeArtist(arr5, index5) {
 
 removeArtist(artists, 0);
 console.log(artists);
-
- 
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. 
